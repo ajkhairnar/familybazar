@@ -1,0 +1,93 @@
+<!--- 
+                <table id="myTable" class="table w-100 thead-primary">
+                <thead>
+						<tr>
+							<th>Id</th>
+							<th> Img </th>
+							<th> Company </th>
+							<th> Product Name </th>
+							<th> Category </th>
+							<th> Sub Category </th>
+							<th> Variation </th>
+							<th> D. Price </th>
+							<th> Price </th>
+                            <th> Action </th>
+						</tr>
+					</thead>
+
+          <tbody>
+            <?php  foreach ($products as $product) { ?>
+                    <tr>
+                        <th scope="row"><?= $product->product_id ?></th>
+                        <th scope="row"><img src="<?=base_url()?>uploads/product/<?=$product->product_img?>"></th>
+                        <th scope="row"><?= $product->product_company ?></th>
+                        <th scope="row"><?= $product->product_name ?></th>
+                        <th scope="row"><?= $product->product_cat ?></th>
+                        <th scope="row"><?= $product->product_subcat ?></th>
+                        <th scope="row"><?php 
+                        
+                        $product_variation1=json_decode($product->product_variation );
+                        if(is_array($product_variation1))
+                        {
+                        $product_variation=$product_variation1[0]; 
+                        foreach($product_variation as $key => $value) {
+                          echo $product_variation[$key]."<br>";
+                        }
+                        }
+                        else
+                        {
+                            echo $product_variation1;
+                        }
+                        
+                        
+                        ?></th>
+                        <th scope="row"><?php 
+
+                        $product_dprice1=json_decode( $product->product_dprice );
+                        if(is_array($product_dprice1))
+                        {
+                        $product_dprice=$product_dprice1[0]; 
+                        foreach($product_dprice as $key => $value) {
+                          echo $product_dprice[$key]."<br>";
+                        }
+                        }
+                        else
+                        {
+                            echo $product_dprice1;
+                        }
+                        
+                        
+                        ?></th>
+
+                        <th scope="row"><?php
+                        
+                        $product_mrp1=json_decode( $product->product_mrp);
+                        if(is_array($product_mrp1))
+                        {
+                        $product_mrp=$product_mrp1[0]; 
+                        foreach($product_mrp as $key => $value) {
+                          echo $product_mrp[$key]."<br>";
+                        }
+                        }
+                        else
+                        {
+                            echo $product_mrp1;
+                        }
+                        ?>
+                        
+                        
+                       </th>
+
+                        
+                        <td>
+                            <a href="<?=base_url().'product/view_product/'.$product->product_id ?>"><i class="fas fa-paper-plane text-secondary text-success"></i></a>
+                            <a href="<?=base_url().'product/product_manage/'.$product->product_id ?>"><i class="fas fa-pencil-alt text-secondary"></i></a>
+                            <a href="<?=base_url().'product/product_delete/'.$product->product_id.'/'.$product->product_img ?>"><i class="far fa-trash-alt ms-text-danger"></i></a>
+                        </td>
+                      
+                    </tr>
+                    <?php } ?>
+    
+          </tbody>
+                </table>
+                ---->
